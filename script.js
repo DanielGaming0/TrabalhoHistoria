@@ -1,4 +1,4 @@
-// script.js - Transições fluidas e efeitos medievais
+// script.js - Transições fluidas e efeitos medievais (SEM AUTO-ROTAÇÃO)
 document.addEventListener('DOMContentLoaded', () => {
   const slidesContainer = document.getElementById('slides');
   const prevBtn = document.getElementById('prevBtn');
@@ -263,22 +263,9 @@ document.addEventListener('DOMContentLoaded', () => {
       el.classList.add('floating');
     });
   }, 500);
-  
-  // Auto-rotate slides (optional)
-  let autoRotateInterval = setInterval(() => {
-    if (!isAnimating && !touchMoved) {
-      goTo(current + 1);
-    }
-  }, 10000);
-  
-  // Pause auto-rotation when user interacts
-  const stopAutoRotate = () => {
-    clearInterval(autoRotateInterval);
-  };
-  
-  document.addEventListener('keydown', stopAutoRotate);
-  document.addEventListener('click', stopAutoRotate);
-  document.addEventListener('touchstart', stopAutoRotate);
+
+  // REMOVIDA A FUNÇÃO DE AUTO-ROTAÇÃO
+  // O código abaixo foi comentado para evitar a passagem automática de slides
 
   // Add CSS animations dynamically with better easing
   const style = document.createElement('style');
